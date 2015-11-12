@@ -19,7 +19,7 @@ if ERRORLEVEL 1 goto :buildError
 echo Building is successful
 
 echo Checking build consistency...
-for /F "tokens=*" %%i in (files.txt) do if not exist %repositoryPath%\bin\Release\%%i set missingFile=%%i& goto :checkError
+for /F "tokens=*" %%i in (files.txt) do if not exist %repositoryPath%\GUI\bin\Release\%i% set missingFile=%%i& goto :checkError
 
 echo Running tests...
 %NUnitPath%\nunit-console.exe %repositoryPath%\Test\bin\Release\Tests.dll > tests.txt

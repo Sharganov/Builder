@@ -2,14 +2,14 @@
 if "%main%"=="" goto :EOF
 
 set GitPath="D:\Git\bin"
-set GitUrl="https://github.com/Sharganov/Builder"
+set GitUrl="https://github.com/MaKToff/Geometry"
 set MSBuildPath="C:\Windows\Microsoft.NET\Framework\v4.0.30319"
 set NUnitpath="D:\NUnit-2.6.4\bin"
-set repositoryPath="D:\repositories\Builder"
+set repositoryPath="D:/repositoies/Geometry"
 
 set missingFile=
 
-set solutionName=""
+set solutionName=Geometry.sln
 set fileList=files.txt
 
 set cloneFailed=false

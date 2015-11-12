@@ -1,7 +1,7 @@
 @echo off
 if "%main%"=="" goto :EOF
 
-set Message=Build successful.
+set Message=Build successful
 set attachted=msbuild.log
 
 if %cloneFailed%==true (
