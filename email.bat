@@ -1,17 +1,20 @@
-@echo off
 if "%main%"=="" goto :EOF
 
-set Message=Build successful
-set attachted=msbuild.log
+set MESSAGE=Build successful
+set ATTACHED=msbuild.log
 
-if %cloneFailed%==true (
-	set Message=Failed to clone repository
+if %CLONE_FAILED%==true (
+	set MESSAGE=Failed to clone repository
 	set attachted=clone.log
 )
-if %buildFailed%==true set Message=Build failed
-if %checkFailed%==true set Message=Check failed. Not found %missingFile%
-if %testFailed%==true set Message=Test failed
 
+if %BUILD_FAILED%==true set MESSAGE=Build failed
 
+if %CHECK_FAILED%==true set MESSAGE=Check failed. Not found %MISSEDFILE%
 
-D:\email\mailsend1.18.exe -to %EmailReceiver% -from %EmailReceiver% -ssl -port 465 -auth -smtp smtp.mail.ru -sub "%Message%" +cc +bc -v -user pro-builder1 -pass "builder123" -attach "%attachted%" -M "%Message%
+if %TEST_FAILED%==true ( 
+  set MESSAGE=Test failed
+  set ATTECHED=test.log
+)
+
+%MAILSEND% -to %MAILRECIVER% -from %MAILRECIVER% -ssl -port 465 -auth -smtp smtp.mail.ru -sub "%MESSAGE%" +cc +bc -v -user %USER% -pass %PASS% -attach "%ATTACHED%" -M "%MESSAGE%

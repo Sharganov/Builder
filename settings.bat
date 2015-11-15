@@ -1,20 +1,22 @@
 @echo off
 if "%main%"=="" goto :EOF
 
-set GitPath="D:\Git\bin"
-set GitUrl="https://github.com/MaKToff/Geometry"
-set MSBuildPath="C:\Windows\Microsoft.NET\Framework\v4.0.30319"
-set NUnitpath="D:\NUnit-2.6.4\bin"
-set repositoryPath="D:/repositoies/Geometry"
+set GIT="D:\Git\bin\git"
+set GIT_URL="https://github.com/MaKToff/Geometry"
+set MSBUILD="C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
+set NUNIT="D:\NUnit-2.6.4\bin\nunit-console.exe"
+set REPO_PATH=D:\repositories\Geometry
+set MAILSEND="D:\email\mailsend1.18.exe"
+set MISSEDFILE=
 
-set missingFile=
+set SOLUTION_NAME=Geometry.sln
+set FILELIST=files.txt
 
-set solutionName=Geometry.sln
-set fileList=files.txt
+set CLONE_FAILED=false
+set BUILD_FAILED=false
+set CHECK_FAILED=false
+set TEST_FAILED=false
 
-set cloneFailed=false
-set buildFailed=false
-set checkFailed=false
-set testFailed=false
-
-set EmailReceiver=pro-builder1@mail.ru
+set MAILRECIVER=pro-builder1@mail.ru
+set USER=pro-builder1
+set PASS="builder123"
