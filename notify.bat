@@ -5,7 +5,7 @@ set ATTACHED=msbuild.log
 
 if %CLONE_FAILED%==true (
 	set MESSAGE=Failed to clone repository
-	set attachted=clone.log
+	set ATTECHED=clone.log
 )
 
 if %BUILD_FAILED%==true set MESSAGE=Build failed
