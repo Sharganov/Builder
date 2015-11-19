@@ -7,7 +7,7 @@ set MSBUILD="C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
 set NUNIT="D:\NUnit-2.6.4\bin\nunit-console.exe"
 set REPO_PATH=D:\repositories\Geometry
 set MAILSEND="D:\email\mailsend1.18.exe"
-set MISSEDFILE=""
+set MISSEDFILE=
 
 set SOLUTION_NAME=Geometry.sln
 set FILELIST=files.txt
